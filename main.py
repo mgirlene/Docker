@@ -32,3 +32,15 @@ datas('Dia') #chama a função
 print(df_sum)
 
 df_sum.to_csv("d3.csv") #gera um csv com o dataframe df_sum
+
+def predict(number):
+  print(df_sum['Dia'][number - 1]) #inciando a função predict
+
+while True:
+    n = input("Digite um numero inteiro positivo: ")
+    if n.isnumeric():
+        predict(int(n)) #chama a função
+        break
+    else:
+        print("O número deve ser inteiro")
+        continue
