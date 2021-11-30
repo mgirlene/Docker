@@ -34,9 +34,12 @@ print(df_sum)
 df_sum.to_csv("d3.csv") #gera um csv com o dataframe df_sum
 
 def predict(number):
-  for number in range(number - 1,690):
+  cont = len(df_sum) - number #contador de dias á frente
+  print('Quantidade de dias á frente = ' , cont)
+  for number in range(number - 1,len(df_sum)):
     number+=1
-    print(df_sum['Dia'][number - 1], df_sum['new_cases'][number - 1])
+    cont+=1
+    print(df_sum['Dia'][number - 1], '->' ,df_sum['new_cases'][number - 1])
 
 while True:
     n = input("Digite um numero inteiro positivo: ")
